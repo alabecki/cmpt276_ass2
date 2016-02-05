@@ -14,6 +14,8 @@
 <div>
 
 <%= form_for @people do |f| %>
+
+   <h1>Edit Person </h1>
  
   <% if @people.errors.any? %>
       <h2>
@@ -36,6 +38,7 @@
     <%= f.label :weight %><br>
     <%= f.text_field :weight %>
   </p>
+  <img src="http://i.imgur.com/fRzhZAP.png" height = 500 width = 500 style = "float:right">
   <p>
       <%= f.label :height %><br>
       <%= f.text_field :height %>

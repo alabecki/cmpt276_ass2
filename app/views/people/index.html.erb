@@ -7,7 +7,8 @@
     border-top: 50px solid  	#8B008B;
     margin: 10px;
     background-color: #6B8E23;
-    padding: 20px;
+    padding: 40px;
+    font-family: Garamond;
     }
 </style>
 
@@ -15,9 +16,9 @@
 <div ie = "border">
     
 
-<h1>Listing People</h1>
+<h1 style = "color:purple">Listing People</h1>
 
-<img src =http://i.imgur.com/K4EFczs.png  style="float:right">
+      <img src=http://i.imgur.com/NHZzz6G.png style = "float:right"> 
  
 <table>
   <tr>
@@ -47,7 +48,34 @@
 <%= link_to 'Home', root_path %><br>
 
 
-<h1> Diaplaying People </h1>
+   
+
+
+    <% total = 0 %>
+    <% count = 0 %>
+    <% @people.each do |people| %>
+   <% total = total + people.weight %>
+   <% count = count +1%>
+   <%end%>
+   <% aweight = total/count %>
+
+
+
+    <% total = 0 %>
+    <% count = 0 %>
+    <% @people.each do |people| %>
+   <% total = total + people.height %>
+   <% count = count +1 %>
+   <%end%>
+   <% aheight = total/count%>
+   <%print aweight%> 
+
+<p><%= "Number of people: #{count}" %></p>
+<p><%= "Average Weight: #{aweight}" %></p>
+<p><%= "Average Height: #{aheight}" %></p>
+
+
+<h1 style = "color:purple"> Displaying People </h1>
     <% @people.each do |people| %>
     
        <style>
@@ -58,10 +86,11 @@
       
 
       <canvas id="canvas" width = <%= people.weight %> height=  <%= people.height %> style = "background-color:<%= people.colour %>" "border:1px solid #d3d3d3"
-         "float: left">
+         "float: none">
 
       </canvas>
-       <p><%= people.name %></p><br> <bk>
+         <p> </p><br>
+       <p><%= people.name %></p><br> 
   
    
   
