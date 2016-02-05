@@ -1,0 +1,23 @@
+<h1> Diaplaying People </h1>
+<div>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+	     <% @people.each do |people| %>
+    </canvas>
+     <% @people.each do |people| %>
+     
+     <p><%= people.name %></p>
+     
+     <%= javascript_tag do %>
+     
+     var c = document.getElementById("myCanvas");
+     var ctx = c.getContext("2d");
+     var w =  <%= people.weight %>
+     var h = <%= people.height %>
+     var col = <%= people.colour %>
+    ctx.rect(20, 20,w, h);
+    ctx.fillStyle = col;
+	ctx.fill();
+    <%end%> 
+     <% end %>
+     
+</div>

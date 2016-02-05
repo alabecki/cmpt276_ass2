@@ -1,0 +1,21 @@
+<p>
+  <strong>Name:</strong>
+  <%= @people.name %>
+</p>
+ 
+<p>
+  Weight:
+  <%= @people.weight %>
+</p>
+<p>
+    Height:
+    <%= @people.height %>
+</p>
+<p>
+    Colour:
+    <%= @people.colour %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@people) %> |
+
+<%= link_to 'Back', people_path %>

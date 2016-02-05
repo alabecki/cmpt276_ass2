@@ -1,0 +1,49 @@
+<h1>Listing People</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Height</h>
+    <th>Colour</h>
+  </tr>
+ 
+  <% @people.each do |people| %>
+    <tr>
+      <td><%= people.name %></td>
+      <td><%= people.weight %></td>
+      <td><%= people.height %></td>
+      <td><%= people.colour %></td>
+      <td><%= link_to 'Show', person_path(people)%></td>
+      <td><%= link_to 'Edit', edit_person_path(people)%></td>
+       <td><%= link_to 'Destroy', person_path(people),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New person', new_person_path %><br>
+
+<%= link_to 'Home', root_path %><br>
+
+
+<h1> Diaplaying People </h1>
+    <% @people.each do |people| %>
+    
+       <style>
+       canvas {
+       float: left;
+       }
+       </style>
+      
+
+      <canvas id="canvas" width = <%= people.weight %> height=  <%= people.height %> style = "background-color:<%= people.colour %>" "border:1px solid #d3d3d3"
+         "float: left">
+
+      </canvas>
+       <p><%= people.name %></p><br>
+  
+   
+  
+    <% end %>
