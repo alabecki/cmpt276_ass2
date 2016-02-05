@@ -1,4 +1,20 @@
-<h1>Edit Person</h1>
+<style>
+    div{
+    height: 600px;
+    border-left: 50px solid  	#8B008B;
+    border-right: 50px solid  	#8B008B;
+    border-bottom: 50px solid  	#8B008B;
+    border-top: 50px solid  	#8B008B;
+    margin: 10px;
+    background-color: #6B8E23;
+    padding: 20px;
+    }
+</style>
+
+<div>
+
+<h1>New Person</h1>
+<img src =http://i.imgur.com/Yg7yJm2.png  style="float:right">
 
 <%= form_for :people, url: people_path do |f| %>
 
@@ -41,3 +57,5 @@
 <% end %>
 
 <%= link_to 'Back', people_path %>
+
+</div>
